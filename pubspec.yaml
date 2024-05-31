@@ -4,7 +4,7 @@ publish_to: 'none'
 version: 1.1.6+1
 
 environment:
-  sdk: ">=2.18.0 <3.0.0"
+  sdk: ">=2.18.0 <4.0.0"
 
 
 dependencies:
@@ -27,6 +27,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   build_runner:
+  very_good_analysis:
   hive_generator:
   flutter_lints: 
   flutter_launcher_icons: "^0.11.0"
