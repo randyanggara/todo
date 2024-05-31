@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:todo/screens/widgets/drawer_widget.dart';
 
 class ScheduleAppBarWidget extends StatelessWidget {
   const ScheduleAppBarWidget({super.key});

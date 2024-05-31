@@ -77,10 +77,10 @@ class _TaskListPageState extends State<TaskListPage> {
               ],
             ),
           ),
-          // TaskList(
-          //   taskListController: _taskListController,
-          //   selectedDate: _taskListController.selectedDate.value,
-          // ),
+          TaskList(
+            taskListController: _taskListController,
+            selectedDate: _taskListController.selectedDate.value,
+          ),
         ],
       ),
     );
