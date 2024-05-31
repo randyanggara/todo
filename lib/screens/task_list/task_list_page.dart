@@ -16,7 +16,7 @@ import 'package:todo/screens/task_list/widgets/tasks_list.dart';
 import 'package:todo/services/common/category_index_provider.dart';
 
 class TaskListPage extends StatefulWidget {
-  const TaskListPage({Key? key}) : super(key: key);
+  const TaskListPage({super.key});
 
   @override
   State<TaskListPage> createState() => _TaskListPageState();
@@ -55,36 +55,33 @@ class _TaskListPageState extends State<TaskListPage> {
         child: const Icon(Icons.add),
       ),
       drawer: const CustomDrawerWidget(),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
-        child: Column(
-          children: [
-            Container(
-              height: 250,
-              decoration: BodyColors.schreduleBody,
-              child: Column(
-                children: <Widget>[
-                  const ScheduleAppBarWidget(),
-                  CurrentDateWidget(
-                    selectedDay: _taskListController.selectedDate.value,
-                  ),
-                  DayLineWidget(
-                    taskListController: _taskListController,
-                    changeDay: (value) {
-                      setState(() {
-                        _taskListController.selectedDate.value = value;
-                      });
-                    },
-                  ),
-                ],
-              ),
+      body: Column(
+        children: [
+          Container(
+            decoration: BodyColors.schreduleBody,
+            child: Column(
+              children: <Widget>[
+                const SizedBox(height: 35),
+                const ScheduleAppBarWidget(),
+                CurrentDateWidget(
+                  selectedDay: _taskListController.selectedDate.value,
+                ),
+                DayLineWidget(
+                  taskListController: _taskListController,
+                  changeDay: (value) {
+                    setState(() {
+                      _taskListController.selectedDate.value = value;
+                    });
+                  },
+                ),
+              ],
             ),
-            TaskList(
-              taskListController: _taskListController,
-              selectedDate: _taskListController.selectedDate.value,
-            ),
-          ],
-        ),
+          ),
+          // TaskList(
+          //   taskListController: _taskListController,
+          //   selectedDate: _taskListController.selectedDate.value,
+          // ),
+        ],
       ),
     );
   }

@@ -8,10 +8,10 @@ class DayLineWidget extends StatefulWidget {
   final Function(DateTime) changeDay;
 
   const DayLineWidget({
-    Key? key,
+    super.key,
     required this.changeDay,
     required this.taskListController,
-  }) : super(key: key);
+  });
 
   @override
   State<DayLineWidget> createState() => _DayLineWidgetState();
@@ -20,10 +20,12 @@ class DayLineWidget extends StatefulWidget {
 class _DayLineWidgetState extends State<DayLineWidget> {
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ValueListenableBuilder(
-        valueListenable: widget.taskListController.calendar,
-        builder: (__, calendarList, _) => PageView.builder(
+    return ValueListenableBuilder(
+      valueListenable: widget.taskListController.calendar,
+      builder: (__, calendarList, _) => SizedBox(
+        width: double.infinity,
+        height: 160,
+        child: PageView.builder(
           controller: widget.taskListController.pageController,
           itemCount: calendarList.length,
           scrollDirection: Axis.horizontal,

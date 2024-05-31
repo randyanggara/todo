@@ -6,7 +6,7 @@ import 'package:todo/screens/task_list/task_list_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   await SystemChromeProvider.setSystemChrome();
+  // await SystemChromeProvider.setSystemChrome();
   await LocalStorageInitializer.registerAdapters();
   await LocalStorageInitializer.openAllBoxes();
   await DefaultCategoryProvider.fillDefaultCategory();
@@ -23,9 +23,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'ToDo',
       theme: classicTheme,
-      home: const SafeArea(
-        child: TaskListPage(),
-      ),
+      home: const TaskListPage(),
     );
   }
 }

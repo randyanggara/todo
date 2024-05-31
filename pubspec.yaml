@@ -30,9 +30,9 @@ dev_dependencies:
   very_good_analysis:
   hive_generator:
   flutter_lints: 
-  flutter_launcher_icons: "^0.11.0"
+  flutter_launcher_icons: "^0.13.1"
 
-flutter_icons:
+flutter_launcher_icons:
   android: true
   ios: false
   image_path: "assets/app_icon/todo.png"

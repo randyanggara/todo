@@ -12,10 +12,10 @@ class AddCategoryPage extends StatefulWidget {
   final bool isEdit;
   final int index;
   const AddCategoryPage({
-    Key? key,
+    super.key,
     required this.index,
     required this.isEdit,
-  }) : super(key: key);
+  });
 
   @override
   State<AddCategoryPage> createState() => _AddCategoryPageState();

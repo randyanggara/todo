@@ -17,10 +17,10 @@ class TaskList extends StatelessWidget {
   final DateTime selectedDate;
 
   const TaskList({
-    Key? key,
+    super.key,
     required this.selectedDate,
     required this.taskListController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
