@@ -5,7 +5,7 @@ import 'package:todo/data/repository/category/category_repository_impl.dart';
 import 'package:todo/data/repository/user_config/user_config_repository_impl.dart';
 
 class DefaultCategoryProvider {
-  static String get _assetsPath => 'assets/default_category_icons/';
+  static String get _assetsPath => 'assets/defaultCategoryIcons/';
   static const List<String> _categoryTitles = [
     'Event',
     'Personal',

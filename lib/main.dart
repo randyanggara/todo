@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo/services/common/default_category_provider.dart';
 import 'package:todo/data/database/local_storage_initializer.dart';
-import 'package:todo/screens/task_list/task_list_page.dart';
+import 'package:todo/services/route_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,16 +12,23 @@ void main() async {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   const MyApp({super.key});
 
   @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _appRouter = RouteService();
+
+  @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: _appRouter.config(),
       debugShowCheckedModeBanner: false,
       title: 'ToDo',
       theme: classicTheme,
-      home: const TaskListPage(),
     );
   }
 }

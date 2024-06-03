@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
@@ -16,6 +17,7 @@ import 'package:todo/screens/task_list/widgets/task_body/dialogs/task_list_optio
 import 'package:todo/screens/task_list/widgets/tasks_list.dart';
 import 'package:todo/services/common/category_index_provider.dart';
 
+@RoutePage()
 class TaskListPage extends StatefulWidget {
   const TaskListPage({super.key});
 
