@@ -43,7 +43,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/defaultCategoryIcons/
+    - assets/default_category_icons/
     - assets/
     - assets/app_icon/
 
