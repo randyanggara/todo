@@ -6,14 +6,17 @@ import 'package:todo/screens/category/widgets/popup_buttons_widget.dart';
 
 class CategoryCardWidget extends StatelessWidget {
   final int index;
+
   final CategoryModel categoryModel;
+
   final CategoryListController categoryController;
+
   const CategoryCardWidget({
-    Key? key,
+    super.key,
     required this.categoryModel,
     required this.categoryController,
     required this.index,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

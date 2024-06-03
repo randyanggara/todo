@@ -3,7 +3,7 @@ import 'package:todo/screens/task_list/controller/drawer_items.dart';
 import 'package:todo/services/route_service.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
-  const CustomDrawerWidget({Key? key}) : super(key: key);
+  const CustomDrawerWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

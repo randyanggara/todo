@@ -8,7 +8,7 @@ import 'package:todo/screens/category/widgets/category_card_widget.dart';
 import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
 
 class CategoryPage extends StatefulWidget {
-  const CategoryPage({Key? key}) : super(key: key);
+  const CategoryPage({super.key});
 
   @override
   State<CategoryPage> createState() => _CategoryPageState();

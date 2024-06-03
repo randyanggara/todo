@@ -19,7 +19,7 @@ class TaskListOptionsDialog {
               TaskListDialogButton(
                   icon: Icons.add_task_outlined,
                   text: 'Add task',
-                  method: () async {
+                  onPressCallback: () async {
                     Navigator.pop(context);
                     taskListController.isNotEmptyCategory(context)
                         ? await RouteService.toAddTaskPage(context)
@@ -28,7 +28,7 @@ class TaskListOptionsDialog {
               TaskListDialogButton(
                   icon: Icons.post_add_outlined,
                   text: 'Add category',
-                  method: () async {
+                  onPressCallback: () async {
                     Navigator.pop(context);
                     await RouteService.toAddEditCategoryPage(context, 0, false);
                   })

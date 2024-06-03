@@ -9,15 +9,15 @@ class CustomAppBarWidget extends StatelessWidget
   final String title;
   final bool showActions;
   final BuildContext context;
-  final VoidCallback? addMethod;
+  final VoidCallback? onAddCallback;
 
   const CustomAppBarWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.showActions,
     required this.context,
-    this.addMethod,
-  }) : super(key: key);
+    this.onAddCallback,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class CustomAppBarWidget extends StatelessWidget
           ? [
               IconButton(
                 icon: const Icon(Icons.control_point),
-                onPressed: addMethod,
+                onPressed: onAddCallback,
               )
             ]
           : [],

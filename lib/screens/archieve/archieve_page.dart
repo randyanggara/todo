@@ -7,7 +7,7 @@ import 'package:todo/screens/archieve/widgets/dismiss_style_widget.dart';
 import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
 
 class ArchievePage extends StatefulWidget {
-  const ArchievePage({Key? key}) : super(key: key);
+  const ArchievePage({super.key});
 
   @override
   State<ArchievePage> createState() => _ArchievePageState();

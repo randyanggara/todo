@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:todo/screens/widgets/gradient_color.dart';
 
 class IconDoneWidget extends StatelessWidget {
-  const IconDoneWidget({Key? key}) : super(key: key);
+  const IconDoneWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

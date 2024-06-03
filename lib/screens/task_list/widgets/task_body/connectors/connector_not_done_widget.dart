@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:timelines/timelines.dart';
 
 class ConnectorNotDoneWidget extends StatelessWidget {
-  const ConnectorNotDoneWidget({Key? key}) : super(key: key);
+  const ConnectorNotDoneWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

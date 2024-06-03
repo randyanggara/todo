@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class DismissStyleWidget extends StatelessWidget {
-  const DismissStyleWidget({Key? key}) : super(key: key);
+  const DismissStyleWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ColoredBox(
+    return const ColoredBox(
       color: Colors.red,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
-        children: const [
+        children: [
           Icon(
             Icons.delete,
             color: Colors.white,

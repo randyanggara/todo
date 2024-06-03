@@ -6,9 +6,9 @@ class TaskCardWidget extends StatelessWidget {
   final TaskModel taskModel;
 
   const TaskCardWidget({
-    Key? key,
+    super.key,
     required this.taskModel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +29,15 @@ class TaskCardWidget extends StatelessWidget {
             Text(
               taskModel.text,
               maxLines: 2,
-              style:  TextStyle(
-                color:taskModel.isDone ? Colors.white : Colors.black87,
+              style: TextStyle(
+                color: taskModel.isDone ? Colors.white : Colors.black87,
                 fontSize: 18,
                 overflow: TextOverflow.ellipsis,
               ),
             ),
             Text(
               taskModel.category,
-              style:  TextStyle(
+              style: TextStyle(
                 color: taskModel.isDone ? Colors.white : Colors.black87,
                 fontWeight: FontWeight.w300,
                 fontSize: 20,

@@ -15,8 +15,8 @@ import 'package:todo/services/common/category_index_provider.dart';
 
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<AddTaskPage> createState() => _AddTaskPageState();

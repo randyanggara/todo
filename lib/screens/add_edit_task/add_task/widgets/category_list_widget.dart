@@ -7,9 +7,9 @@ import 'package:todo/screens/task_list/controller/task_controller.dart';
 class CategoryListWidget extends StatefulWidget {
   final TaskController taskController;
   const CategoryListWidget({
-    Key? key,
+    super.key,
     required this.taskController,
-  }) : super(key: key);
+  });
 
   @override
   State<CategoryListWidget> createState() => _CategoryListWidgetState();

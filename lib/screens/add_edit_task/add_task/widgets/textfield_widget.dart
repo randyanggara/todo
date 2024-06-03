@@ -7,12 +7,12 @@ class TextfieldWidget extends StatelessWidget {
   final String? Function(String?) validator;
 
   const TextfieldWidget({
-    Key? key,
+    super.key,
     required this.textEditingController,
     this.hintText,
     this.enabled = false,
     required this.validator,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -6,9 +6,9 @@ class ArchieveBodyWidget extends StatelessWidget {
   final ArchieveModel archieveModel;
 
   const ArchieveBodyWidget({
-    Key? key,
+    super.key,
     required this.archieveModel,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
