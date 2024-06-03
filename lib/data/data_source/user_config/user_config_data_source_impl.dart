@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo/data/data_source/user_config/user_config_data_source.dart';
-import 'package:todo/data/database/storage_sheme.dart';
+import 'package:todo/data/database/storage_scheme.dart';
 
 class UserConfigDataSourceImpl implements UserConfigDataSource {
   @override

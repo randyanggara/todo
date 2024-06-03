@@ -1,6 +1,6 @@
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo/data/data_source/tasks/task_data_source.dart';
-import 'package:todo/data/database/storage_sheme.dart';
+import 'package:todo/data/database/storage_scheme.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
 
 class TasksDataSourceImpl implements TasksDataSource {
@@ -10,19 +10,17 @@ class TasksDataSourceImpl implements TasksDataSource {
   Box<TaskModel> getDatabase() => _taskDatabase;
 
   @override
-  Future<void> saveTask(TaskModel model) async =>
-      await _taskDatabase.add(model);
+  Future<void> saveTask(TaskModel model) => _taskDatabase.add(model);
 
   @override
-  Future<void> deleteTask(int index) async =>
-      await _taskDatabase.deleteAt(index);
+  Future<void> deleteTask(int index) => _taskDatabase.deleteAt(index);
 
   @override
   Future<void> updateTask({
     required int index,
     required TaskModel model,
-  }) async =>
-      await _taskDatabase.putAt(
+  }) =>
+      _taskDatabase.putAt(
         index,
         model,
       );

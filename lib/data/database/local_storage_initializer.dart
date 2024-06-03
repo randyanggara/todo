@@ -1,6 +1,6 @@
 import 'package:hive_flutter/adapters.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:todo/data/database/storage_sheme.dart';
+import 'package:todo/data/database/storage_scheme.dart';
 import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
