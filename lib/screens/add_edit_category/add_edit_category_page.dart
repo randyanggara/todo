@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/data/data_source/category/category_data_source_impl.dart';
 import 'package:todo/screens/add_edit_category/controller/add_edit_category_controller.dart';
@@ -8,6 +9,7 @@ import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
 import 'package:todo/screens/widgets/unfocus_widget.dart';
 
 // TODO fix with SRP
+@RoutePage()
 class AddCategoryPage extends StatefulWidget {
   final bool isEdit;
   final int index;

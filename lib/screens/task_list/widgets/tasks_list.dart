@@ -1,9 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:timelines/timelines.dart';
-import 'package:todo/services/route_service.dart';
 import 'package:todo/screens/task_list/controller/task_list_controller.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
 import 'package:todo/screens/task_list/widgets/task_body/connectors/connector_done_widget.dart';
@@ -11,6 +11,7 @@ import 'package:todo/screens/task_list/widgets/task_body/connectors/connector_no
 import 'package:todo/screens/task_list/widgets/task_body/icons/icon_not_done_widget.dart';
 import 'package:todo/screens/task_list/widgets/task_body/body/task_card_widget.dart';
 import 'package:todo/screens/task_list/widgets/task_body/icons/icon_done_widget.dart';
+import 'package:todo/services/route_service.gr.dart';
 
 class TaskList extends StatelessWidget {
   final TaskListController taskListController;
@@ -46,10 +47,14 @@ class TaskList extends StatelessWidget {
                           children: [
                             SlidableAction(
                               flex: 2,
-                              onPressed: (_) =>
+                              onPressed: (_) async =>
                                   taskListController.isNotEmptyCategory(context)
-                                      ? RouteService.toEditTaskPage(
-                                          context, task, i)
+                                      ? await AutoRouter.of(context).push(
+                                          EditTaskRoute(
+                                            taskIndex: i,
+                                            model: task,
+                                          ),
+                                        )
                                       : null,
                               backgroundColor: Colors.orange,
                               foregroundColor: Colors.white,

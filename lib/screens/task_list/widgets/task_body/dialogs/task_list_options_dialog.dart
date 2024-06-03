@@ -1,8 +1,9 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
-import 'package:todo/services/route_service.dart';
 import 'package:todo/screens/task_list/controller/task_list_controller.dart';
 import 'package:todo/screens/task_list/widgets/task_body/dialogs/dialog_button.dart';
+import 'package:todo/services/route_service.gr.dart';
 
 class TaskListOptionsDialog {
   static Future<void> showOptionsDialog({
@@ -22,7 +23,8 @@ class TaskListOptionsDialog {
                   onPressCallback: () async {
                     Navigator.pop(context);
                     taskListController.isNotEmptyCategory(context)
-                        ? await RouteService.toAddTaskPage(context)
+                        ? await AutoRouter.of(context)
+                            .push(const AddTaskRoute())
                         : null;
                   }),
               TaskListDialogButton(
@@ -30,7 +32,9 @@ class TaskListOptionsDialog {
                   text: 'Add category',
                   onPressCallback: () async {
                     Navigator.pop(context);
-                    await RouteService.toAddEditCategoryPage(context, 0, false);
+                    await AutoRouter.of(context).push(
+                      AddCategoryRoute(index: 0, isEdit: false),
+                    );
                   })
             ],
           );

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:todo/data/data_source/category/category_data_source_impl.dart';
@@ -7,6 +8,7 @@ import 'package:todo/screens/category/controller/category_list_controller.dart';
 import 'package:todo/screens/category/widgets/category_card_widget.dart';
 import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
 
+@RoutePage()
 class CategoryPage extends StatefulWidget {
   const CategoryPage({super.key});
 

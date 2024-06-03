@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
 import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
@@ -6,6 +7,7 @@ import 'package:todo/screens/archieve/widgets/archieve_body_widget.dart';
 import 'package:todo/screens/archieve/widgets/dismiss_style_widget.dart';
 import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
 
+@RoutePage()
 class ArchievePage extends StatefulWidget {
   const ArchievePage({super.key});
 

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
 import 'package:todo/data/data_source/category/category_data_source_impl.dart';
@@ -14,6 +15,7 @@ import 'package:todo/screens/widgets/unfocus_widget.dart';
 import 'package:todo/screens/task_list/controller/task_validator.dart';
 import 'package:todo/services/common/category_index_provider.dart';
 
+@RoutePage()
 class EditTaskPage extends StatefulWidget {
   final int taskIndex;
   final TaskModel model;

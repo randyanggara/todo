@@ -21,11 +21,13 @@ dependencies:
   flutter_platform_widgets: ^7.0.0
   flutter_slidable: ^3.1.0
   flutter_native_splash: ^2.4.0
+  auto_route: ^8.1.3
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  auto_route_generator: 
   build_runner: ^2.4.10
   very_good_analysis: ^5.1.0
   hive_generator: ^2.0.1

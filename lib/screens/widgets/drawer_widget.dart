@@ -1,6 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/screens/task_list/controller/drawer_items.dart';
-import 'package:todo/services/route_service.dart';
+import 'package:todo/services/route_service.gr.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({super.key});
@@ -17,12 +18,16 @@ class CustomDrawerWidget extends StatelessWidget {
               switch (i) {
                 case 0:
                   Navigator.pop(context);
-                  await RouteService.toCategoryPage(context);
+                  await AutoRouter.of(context).push(
+                    const CategoryRoute(),
+                  );
 
                   break;
                 case 1:
                   Navigator.pop(context);
-                  await RouteService.toAddArchievePage(context);
+                  await AutoRouter.of(context).push(
+                    const ArchieveRoute(),
+                  );
                   break;
               }
             },
