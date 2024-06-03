@@ -10,8 +10,8 @@ class UserConfigDataSourceImpl implements UserConfigDataSource {
   Future<Box> openConfigBox() => Hive.openBox(StorageScheme.config);
 
   @override
-  Future<bool> getIsFirstTime() =>
-      Hive.box(StorageScheme.config).get(StorageScheme.isFirstTime) ?? true;
+  Future<bool> getIsFirstTime() async=>
+     await Hive.box(StorageScheme.config).get(StorageScheme.isFirstTime) ?? true;
 
   @override
   Future<void> putIsFirstTime(bool value) =>

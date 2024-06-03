@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
 import 'package:todo/data/data_source/category/category_data_source_impl.dart';
 import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
@@ -46,42 +47,50 @@ class _TaskListPageState extends State<TaskListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () async => await TaskListOptionsDialog.showOptionsDialog(
-          buildContext: context,
-          taskListController: _taskListController,
-        ),
-        child: const Icon(Icons.add),
-      ),
-      drawer: const CustomDrawerWidget(),
-      body: Column(
-        children: [
-          Container(
-            decoration: BodyColors.schreduleBody,
-            child: Column(
-              children: <Widget>[
-                const SizedBox(height: 35),
-                const ScheduleAppBarWidget(),
-                CurrentDateWidget(
-                  selectedDay: _taskListController.selectedDate.value,
-                ),
-                DayLineWidget(
-                  taskListController: _taskListController,
-                  changeDay: (value) {
-                    setState(() {
-                      _taskListController.selectedDate.value = value;
-                    });
-                  },
-                ),
-              ],
+    return AnnotatedRegion(
+      value: SystemUiOverlayStyle.light,
+      child: SafeArea(
+        left: false,
+        right: false,
+        bottom: false,
+        child: Scaffold(
+          floatingActionButton: FloatingActionButton(
+            onPressed: () async =>
+                await TaskListOptionsDialog.showOptionsDialog(
+              buildContext: context,
+              taskListController: _taskListController,
             ),
+            child: const Icon(Icons.add),
           ),
-          TaskList(
-            taskListController: _taskListController,
-            selectedDate: _taskListController.selectedDate.value,
+          drawer: const CustomDrawerWidget(),
+          body: Column(
+            children: [
+              Container(
+                decoration: BodyColors.schreduleBody,
+                child: Column(
+                  children: <Widget>[
+                    const ScheduleAppBarWidget(),
+                    CurrentDateWidget(
+                      selectedDay: _taskListController.selectedDate.value,
+                    ),
+                    DayLineWidget(
+                      taskListController: _taskListController,
+                      changeDay: (value) {
+                        setState(() {
+                          _taskListController.selectedDate.value = value;
+                        });
+                      },
+                    ),
+                  ],
+                ),
+              ),
+              TaskList(
+                taskListController: _taskListController,
+                selectedDate: _taskListController.selectedDate.value,
+              ),
+            ],
           ),
-        ],
+        ),
       ),
     );
   }
