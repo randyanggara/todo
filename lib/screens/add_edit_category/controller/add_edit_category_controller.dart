@@ -41,31 +41,19 @@ class AddEditCategoryController extends ChangeNotifier {
   ) async {
     await changeButtonAddValue(true);
     if (_isTextValid && _isImagePicked) {
-      if (isEdit) {
-        await editCategory(index, context);
-      } else {
-        await saveCategory(context);
-      }
-    } else if (!_isImagePicked && !_isTextValid) {
+      isEdit ? await editCategory(index, context) : await saveCategory(context);
+    }
+    if (!_isImagePicked && !_isTextValid) {
       showSnackBar(context, 'Pick image and fill text!');
-    } else if (!_isImagePicked) {
+    }
+    if (!_isImagePicked) {
       showSnackBar(context, 'Pick image!');
-    } else if (!_isTextValid) {
+    }
+    if (!_isTextValid) {
       showSnackBar(context, 'Text length must be >2');
     }
     await changeButtonAddValue(false);
   }
-
-  // bool isSameCategoryFound(BuildContext context) {
-  //   for (int i = 0; i < _categoryRepository.length; i++) {
-  //     if (_categoryRepository.getAt(i)!.title.toLowerCase() ==
-  //         titleController.text.toLowerCase()) {
-  //       showSnackBar(context, 'This category  is already exists!');
-  //       return true;
-  //     }
-  //   }
-  //   return false;
-  // }
 
   Future<void> saveCategory(BuildContext context) async {
     await categoryRepository.add(
