@@ -9,10 +9,10 @@ class ArchieveDataSourceImpl implements ArchieveDataSource {
       Hive.box<ArchieveModel>(StorageScheme.archieve);
 
   @override
-  Future<void> save(ArchieveModel model) async =>
-      await Hive.box<ArchieveModel>(StorageScheme.archieve).add(model);
+  Future<void> save(ArchieveModel model) =>
+      Hive.box<ArchieveModel>(StorageScheme.archieve).add(model);
 
   @override
-  Future<void> delete(int index) async =>
-      await Hive.box<ArchieveModel>(StorageScheme.archieve).deleteAt(index);
+  Future<void> delete(int index) =>
+      Hive.box<ArchieveModel>(StorageScheme.archieve).deleteAt(index);
 }
