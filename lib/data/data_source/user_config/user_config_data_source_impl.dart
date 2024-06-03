@@ -4,18 +4,16 @@ import 'package:todo/data/database/storage_sheme.dart';
 
 class UserConfigDataSourceImpl implements UserConfigDataSource {
   @override
-  Future<void> closeBox() async => await Hive.box(StorageScheme.config).close();
+  Future<void> closeBox() => Hive.box(StorageScheme.config).close();
 
   @override
-  Future<Box> openConfigBox() async => await Hive.openBox(StorageScheme.config);
+  Future<Box> openConfigBox() => Hive.openBox(StorageScheme.config);
 
   @override
-  Future<bool> getIsFirstTime() async =>
-      await Hive.box(StorageScheme.config).get(StorageScheme.isFirstTime) ??
-      true;
+  Future<bool> getIsFirstTime() =>
+      Hive.box(StorageScheme.config).get(StorageScheme.isFirstTime) ?? true;
 
   @override
-  Future<void> putIsFirstTime(bool value) async =>
-      await Hive.box(StorageScheme.config)
-          .put(StorageScheme.isFirstTime, value);
+  Future<void> putIsFirstTime(bool value) =>
+      Hive.box(StorageScheme.config).put(StorageScheme.isFirstTime, value);
 }
