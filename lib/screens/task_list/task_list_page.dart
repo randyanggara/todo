@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
 import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
+import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/model/category/category_model.dart';
-import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
+import 'package:todo/data/repository/archieve/archieve_repository.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 import 'package:todo/screens/task_list/controller/task_list_controller.dart';
@@ -29,9 +29,7 @@ class TaskListPage extends StatefulWidget {
 class _TaskListPageState extends State<TaskListPage> {
   final _taskListController = TaskListController(
     categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
-    archieveRepository: ArchieveRepositoryImpl(
-      archieveDataSource: ArchieveDataSourceImpl(),
-    ),
+    archieveRepository: serviceLocator<ArchieveRepository<ArchieveModel>>(),
     categoryIndexProvider: CategoryIndexProvider(),
     taskRepository: TasksRepositoryImpl(
       tasksDataSource: TasksDataSourceImpl(),

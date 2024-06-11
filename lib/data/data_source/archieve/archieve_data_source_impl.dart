@@ -3,7 +3,7 @@ import 'package:todo/data/data_source/archieve/archieve_data_source.dart';
 import 'package:todo/data/database/storage_scheme.dart';
 import 'package:todo/data/model/archieve/archieve_db.dart';
 
-class ArchieveDataSourceImpl implements ArchieveDataSource {
+class ArchieveDataSourceImpl implements ArchieveDataSource<ArchieveModel> {
   @override
   Box<ArchieveModel> getDatabase() =>
       Hive.box<ArchieveModel>(StorageScheme.archieve);

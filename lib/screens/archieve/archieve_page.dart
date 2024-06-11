@@ -1,11 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
-import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
+import 'package:todo/data/model/archieve/archieve_db.dart';
+import 'package:todo/data/repository/archieve/archieve_repository.dart';
 import 'package:todo/screens/archieve/archieve_controller.dart';
 import 'package:todo/screens/archieve/widgets/archieve_body_widget.dart';
 import 'package:todo/screens/archieve/widgets/dismiss_style_widget.dart';
 import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
+import 'package:todo/services/locator_service.dart';
 
 @RoutePage()
 class ArchievePage extends StatefulWidget {
@@ -17,9 +18,7 @@ class ArchievePage extends StatefulWidget {
 
 class _ArchievePageState extends State<ArchievePage> {
   final _archieveController = ArchieveController(
-    archieveRepository: ArchieveRepositoryImpl(
-      archieveDataSource: ArchieveDataSourceImpl(),
-    ),
+    archieveRepository: serviceLocator<ArchieveRepository<ArchieveModel>>(),
   );
 
   @override

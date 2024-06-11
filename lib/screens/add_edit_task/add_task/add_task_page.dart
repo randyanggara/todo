@@ -1,9 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
 import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
+import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/model/category/category_model.dart';
-import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
+import 'package:todo/data/repository/archieve/archieve_repository.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 import 'package:todo/screens/add_edit_task/add_task/controller/add_task_controller.dart';
@@ -32,9 +32,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   final _formKey = GlobalKey<FormState>();
 
   final _addTaskController = AddTaskController(
-    archieveRepository: ArchieveRepositoryImpl(
-      archieveDataSource: ArchieveDataSourceImpl(),
-    ),
+    archieveRepository: serviceLocator<ArchieveRepository<ArchieveModel>>(),
     categoryIndexerProvider: CategoryIndexProvider(),
     categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
     taskValidator: TaskValidator(),

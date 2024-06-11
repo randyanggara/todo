@@ -1,10 +1,9 @@
 import 'package:hive_flutter/adapters.dart';
-import 'package:todo/data/model/archieve/archieve_db.dart';
 
-abstract class ArchieveDataSource {
-  Box<ArchieveModel> getDatabase();
+abstract class ArchieveDataSource<T> {
+  Box<T> getDatabase();
 
-  Future<void> save(ArchieveModel model);
+  Future<void> save(T model);
 
   Future<void> delete(int index);
 }

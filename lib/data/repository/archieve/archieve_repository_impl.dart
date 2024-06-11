@@ -3,9 +3,11 @@ import 'package:todo/data/data_source/archieve/archieve_data_source.dart';
 import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/repository/archieve/archieve_repository.dart';
 
-class ArchieveRepositoryImpl implements ArchieveRepository {
-  final ArchieveDataSource _archieveDataSource;
-  ArchieveRepositoryImpl({required ArchieveDataSource archieveDataSource})
+class ArchieveRepositoryImpl implements ArchieveRepository<ArchieveModel> {
+  final ArchieveDataSource<ArchieveModel> _archieveDataSource;
+
+  ArchieveRepositoryImpl(
+      {required ArchieveDataSource<ArchieveModel> archieveDataSource})
       : _archieveDataSource = archieveDataSource;
 
   @override

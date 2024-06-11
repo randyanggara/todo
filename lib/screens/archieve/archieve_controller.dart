@@ -3,8 +3,9 @@ import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/repository/archieve/archieve_repository.dart';
 
 class ArchieveController {
-  final ArchieveRepository _archieveRepository;
-  ArchieveController({required ArchieveRepository archieveRepository})
+  final ArchieveRepository<ArchieveModel> _archieveRepository;
+  ArchieveController(
+      {required ArchieveRepository<ArchieveModel> archieveRepository})
       : _archieveRepository = archieveRepository;
 
   Box<ArchieveModel> getDatabase() => _archieveRepository.getDatabase();

@@ -14,7 +14,7 @@ import 'package:todo/services/common/category_index_provider.dart';
 class TaskListController {
   final CategoryIndexProvider _categoryIndexProvider;
   final TasksRepository _taskRepository;
-  final ArchieveRepository archieveRepository;
+  final ArchieveRepository<ArchieveModel> archieveRepository;
   final CategoryRepository<CategoryModel> _categoryRepository;
 
   TaskListController({

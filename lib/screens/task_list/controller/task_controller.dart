@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/utils/future_type.dart';
 import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
@@ -24,7 +25,7 @@ class TaskController extends ChangeNotifier {
     required this.taskValidator,
     required this.tasksRepository,
     required this.categoryIndexerProvider,
-    required ArchieveRepository archieveRepository,
+    required ArchieveRepository<ArchieveModel> archieveRepository,
     required this.categoryRepository,
   });
 
