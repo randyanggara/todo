@@ -9,7 +9,7 @@ import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 import 'package:todo/screens/add_edit_task/add_task/controller/add_task_controller.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/category_list_widget.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/textfield_widget.dart';
-import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
+import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
 import 'package:todo/screens/widgets/unfocus_widget.dart';
 import 'package:todo/screens/task_list/controller/task_validator.dart';
 import 'package:todo/services/common/category_index_provider.dart';
@@ -55,7 +55,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(
+      appBar: GradientAppBarWidget(
         context: context,
         showActions: false,
         title: 'Add task',

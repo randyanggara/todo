@@ -10,7 +10,7 @@ import 'package:todo/screens/add_edit_task/edit_task/edit_task_controller.dart';
 import 'package:todo/data/repository/category/category_repository_impl.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/category_list_widget.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/textfield_widget.dart';
-import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
+import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
 import 'package:todo/screens/widgets/unfocus_widget.dart';
 import 'package:todo/screens/task_list/controller/task_validator.dart';
 import 'package:todo/services/common/category_index_provider.dart';
@@ -74,7 +74,7 @@ class _EditTaskPageState extends State<EditTaskPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(
+      appBar: GradientAppBarWidget(
         context: context,
         showActions: false,
         title: 'Edit task',

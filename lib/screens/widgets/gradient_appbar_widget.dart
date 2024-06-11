@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:todo/screens/widgets/gradient_color.dart';
 
-class CustomAppBarWidget extends StatelessWidget
+class GradientAppBarWidget extends StatelessWidget
     implements PreferredSizeWidget {
   @override
   Size get preferredSize => const Size.fromHeight(60);
@@ -11,7 +11,7 @@ class CustomAppBarWidget extends StatelessWidget
   final BuildContext context;
   final VoidCallback? onAddCallback;
 
-  const CustomAppBarWidget({
+  const GradientAppBarWidget({
     super.key,
     required this.title,
     required this.showActions,

@@ -6,7 +6,7 @@ import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/repository/category/category_repository_impl.dart';
 import 'package:todo/screens/category/controller/category_list_controller.dart';
 import 'package:todo/screens/category/widgets/category_card_widget.dart';
-import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
+import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
 
 @RoutePage()
 class CategoryPage extends StatefulWidget {
@@ -26,7 +26,7 @@ class _CategoryPageState extends State<CategoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(
+      appBar: GradientAppBarWidget(
         context: context,
         title: 'Categories',
         showActions: false,

@@ -5,7 +5,7 @@ import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
 import 'package:todo/screens/archieve/archieve_controller.dart';
 import 'package:todo/screens/archieve/widgets/archieve_body_widget.dart';
 import 'package:todo/screens/archieve/widgets/dismiss_style_widget.dart';
-import 'package:todo/screens/widgets/custom_app_bar_widget.dart';
+import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
 
 @RoutePage()
 class ArchievePage extends StatefulWidget {
@@ -25,7 +25,7 @@ class _ArchievePageState extends State<ArchievePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBarWidget(
+      appBar: GradientAppBarWidget(
         context: context,
         showActions: false,
         title: 'Archieve',
