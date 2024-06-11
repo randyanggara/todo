@@ -13,6 +13,8 @@ import 'package:todo/data/repository/category/category_repository_impl.dart';
 final serviceLocator = GetIt.instance;
 
 void initDependencies() {
+// category
+
   final categoryDataSource =
       serviceLocator.registerSingleton<CategoryDataSource<CategoryModel>>(
     CategoryDataSourceImpl(),
@@ -22,7 +24,7 @@ void initDependencies() {
       categoryDataSource: categoryDataSource,
     ),
   );
-
+// archieve
   final archieveDataSource =
       serviceLocator.registerSingleton<ArchieveDataSource<ArchieveModel>>(
           ArchieveDataSourceImpl());
