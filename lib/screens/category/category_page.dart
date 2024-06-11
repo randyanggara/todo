@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo/data/data_source/category/category_data_source_impl.dart';
 import 'package:todo/data/model/category/category_model.dart';
-import 'package:todo/data/repository/category/category_repository_impl.dart';
+import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/screens/category/controller/category_list_controller.dart';
 import 'package:todo/screens/category/widgets/category_card_widget.dart';
 import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
+import 'package:todo/services/locator_service.dart';
 
 @RoutePage()
 class CategoryPage extends StatefulWidget {
@@ -18,9 +18,7 @@ class CategoryPage extends StatefulWidget {
 
 class _CategoryPageState extends State<CategoryPage> {
   final _categoryController = CategoryListController(
-    categoryRepository: CategoryRepositoryImpl(
-      categoryDataSource: CategoryDataSourceImpl(),
-    ),
+    categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
   );
 
   @override

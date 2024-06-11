@@ -1,10 +1,10 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
-import 'package:todo/data/data_source/category/category_data_source_impl.dart';
 import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
+import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
-import 'package:todo/data/repository/category/category_repository_impl.dart';
+import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 import 'package:todo/screens/add_edit_task/add_task/controller/add_task_controller.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/category_list_widget.dart';
@@ -13,6 +13,7 @@ import 'package:todo/screens/widgets/gradient_appbar_widget.dart';
 import 'package:todo/screens/widgets/unfocus_widget.dart';
 import 'package:todo/screens/task_list/controller/task_validator.dart';
 import 'package:todo/services/common/category_index_provider.dart';
+import 'package:todo/services/locator_service.dart';
 
 @RoutePage()
 class AddTaskPage extends StatefulWidget {
@@ -35,9 +36,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
       archieveDataSource: ArchieveDataSourceImpl(),
     ),
     categoryIndexerProvider: CategoryIndexProvider(),
-    categoryRepository: CategoryRepositoryImpl(
-      categoryDataSource: CategoryDataSourceImpl(),
-    ),
+    categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
     taskValidator: TaskValidator(),
     tasksRepository: TasksRepositoryImpl(
       tasksDataSource: TasksDataSourceImpl(),

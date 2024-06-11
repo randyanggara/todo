@@ -1,13 +1,12 @@
 // ignore_for_file: use_build_context_synchronously
-
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:todo/data/data_source/category/category_data_source_impl.dart';
+import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/services/common/category_index_provider.dart';
 import 'package:todo/data/model/category/category_model.dart';
-import 'package:todo/data/repository/category/category_repository_impl.dart';
 import 'package:todo/screens/widgets/custom_snackbar_widget.dart';
+import 'package:todo/services/locator_service.dart';
 
 // TODO fix with SRP
 
@@ -18,8 +17,7 @@ class AddEditCategoryController extends ChangeNotifier {
   final titleController = TextEditingController();
 
   final categoryRepository =
-      CategoryRepositoryImpl(categoryDataSource: CategoryDataSourceImpl())
-          .getDatabase();
+      serviceLocator<CategoryRepository<CategoryModel>>().getDatabase();
   final _categoryIndexController = CategoryIndexProvider();
 
   bool get _isImagePicked => imageFile.value.path.isNotEmpty;

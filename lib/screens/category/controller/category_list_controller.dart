@@ -5,9 +5,10 @@ import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 
 class CategoryListController {
-  final CategoryRepository _categoryRepository;
+  final CategoryRepository<CategoryModel> _categoryRepository;
 
-  CategoryListController({required CategoryRepository categoryRepository})
+  CategoryListController(
+      {required CategoryRepository<CategoryModel> categoryRepository})
       : _categoryRepository = categoryRepository;
 
   final _taskRepository = TasksRepositoryImpl(

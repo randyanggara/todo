@@ -2,10 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:todo/data/data_source/archieve/archieve_data_source_impl.dart';
-import 'package:todo/data/data_source/category/category_data_source_impl.dart';
 import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
+import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/repository/archieve/archieve_repository_impl.dart';
-import 'package:todo/data/repository/category/category_repository_impl.dart';
+import 'package:todo/data/repository/category/category_repository.dart';
 import 'package:todo/data/repository/task/tasks_repository_impl.dart';
 import 'package:todo/screens/task_list/controller/task_list_controller.dart';
 import 'package:todo/screens/widgets/drawer_widget.dart';
@@ -16,6 +16,7 @@ import 'package:todo/screens/task_list/widgets/schedule_appbar_widget.dart';
 import 'package:todo/screens/task_list/widgets/task_body/dialogs/task_list_options_dialog.dart';
 import 'package:todo/screens/task_list/widgets/tasks_list.dart';
 import 'package:todo/services/common/category_index_provider.dart';
+import 'package:todo/services/locator_service.dart';
 
 @RoutePage()
 class TaskListPage extends StatefulWidget {
@@ -27,9 +28,7 @@ class TaskListPage extends StatefulWidget {
 
 class _TaskListPageState extends State<TaskListPage> {
   final _taskListController = TaskListController(
-    categoryRepository: CategoryRepositoryImpl(
-      categoryDataSource: CategoryDataSourceImpl(),
-    ),
+    categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
     archieveRepository: ArchieveRepositoryImpl(
       archieveDataSource: ArchieveDataSourceImpl(),
     ),

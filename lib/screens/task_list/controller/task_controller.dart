@@ -18,7 +18,7 @@ class TaskController extends ChangeNotifier {
   final TasksRepository tasksRepository;
 
   final CategoryIndexProvider categoryIndexerProvider;
-  final CategoryRepository categoryRepository;
+  final CategoryRepository<CategoryModel> categoryRepository;
 
   TaskController({
     required this.taskValidator,

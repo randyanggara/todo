@@ -3,6 +3,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:todo/data/model/archieve/archieve_db.dart';
+import 'package:todo/data/model/category/category_model.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
 import 'package:todo/data/repository/archieve/archieve_repository.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
@@ -14,10 +15,10 @@ class TaskListController {
   final CategoryIndexProvider _categoryIndexProvider;
   final TasksRepository _taskRepository;
   final ArchieveRepository archieveRepository;
-  final CategoryRepository _categoryRepository;
+  final CategoryRepository<CategoryModel> _categoryRepository;
 
   TaskListController({
-    required CategoryRepository categoryRepository,
+    required CategoryRepository<CategoryModel> categoryRepository,
     required TasksRepository taskRepository,
     required CategoryIndexProvider categoryIndexProvider,
     required this.archieveRepository,
