@@ -13,13 +13,13 @@ import 'package:todo/services/common/category_index_provider.dart';
 
 class TaskListController {
   final CategoryIndexProvider _categoryIndexProvider;
-  final TasksRepository _taskRepository;
+  final TasksRepository<TaskModel> _taskRepository;
   final ArchieveRepository<ArchieveModel> archieveRepository;
   final CategoryRepository<CategoryModel> _categoryRepository;
 
   TaskListController({
     required CategoryRepository<CategoryModel> categoryRepository,
-    required TasksRepository taskRepository,
+    required TasksRepository<TaskModel> taskRepository,
     required CategoryIndexProvider categoryIndexProvider,
     required this.archieveRepository,
   })  : _taskRepository = taskRepository,

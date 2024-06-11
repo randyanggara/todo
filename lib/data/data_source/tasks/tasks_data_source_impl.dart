@@ -3,7 +3,7 @@ import 'package:todo/data/data_source/tasks/task_data_source.dart';
 import 'package:todo/data/database/storage_scheme.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
 
-class TasksDataSourceImpl implements TasksDataSource {
+class TasksDataSourceImpl implements TasksDataSource<TaskModel> {
   final _taskDatabase = Hive.box<TaskModel>(StorageScheme.tasks);
 
   @override

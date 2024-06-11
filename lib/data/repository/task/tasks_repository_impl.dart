@@ -3,10 +3,10 @@ import 'package:todo/data/data_source/tasks/task_data_source.dart';
 import 'package:todo/data/model/tasks/task_model.dart';
 import 'package:todo/data/repository/task/tasks_repository.dart';
 
-class TasksRepositoryImpl implements TasksRepository {
-  final TasksDataSource _tasksDataSource;
+class TasksRepositoryImpl implements TasksRepository<TaskModel> {
+  final TasksDataSource<TaskModel> _tasksDataSource;
 
-  TasksRepositoryImpl({required TasksDataSource tasksDataSource})
+  TasksRepositoryImpl({required TasksDataSource<TaskModel> tasksDataSource})
       : _tasksDataSource = tasksDataSource;
 
   @override

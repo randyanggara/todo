@@ -1,11 +1,11 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
 import 'package:todo/data/model/archieve/archieve_db.dart';
 import 'package:todo/data/model/category/category_model.dart';
+import 'package:todo/data/model/tasks/task_model.dart';
 import 'package:todo/data/repository/archieve/archieve_repository.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
-import 'package:todo/data/repository/task/tasks_repository_impl.dart';
+import 'package:todo/data/repository/task/tasks_repository.dart';
 import 'package:todo/screens/add_edit_task/add_task/controller/add_task_controller.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/category_list_widget.dart';
 import 'package:todo/screens/add_edit_task/add_task/widgets/textfield_widget.dart';
@@ -36,9 +36,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
     categoryIndexerProvider: CategoryIndexProvider(),
     categoryRepository: serviceLocator<CategoryRepository<CategoryModel>>(),
     taskValidator: TaskValidator(),
-    tasksRepository: TasksRepositoryImpl(
-      tasksDataSource: TasksDataSourceImpl(),
-    ),
+    tasksRepository: serviceLocator<TasksRepository<TaskModel>>(),
   );
 
   @override

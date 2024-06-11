@@ -1,8 +1,9 @@
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:todo/data/data_source/tasks/tasks_data_source_impl.dart';
 import 'package:todo/data/model/category/category_model.dart';
+import 'package:todo/data/model/tasks/task_model.dart';
 import 'package:todo/data/repository/category/category_repository.dart';
-import 'package:todo/data/repository/task/tasks_repository_impl.dart';
+import 'package:todo/data/repository/task/tasks_repository.dart';
+import 'package:todo/services/locator_service.dart';
 
 class CategoryListController {
   final CategoryRepository<CategoryModel> _categoryRepository;
@@ -11,9 +12,8 @@ class CategoryListController {
       {required CategoryRepository<CategoryModel> categoryRepository})
       : _categoryRepository = categoryRepository;
 
-  final _taskRepository = TasksRepositoryImpl(
-    tasksDataSource: TasksDataSourceImpl(),
-  ).getDatabase();
+  final _taskRepository =
+      serviceLocator<TasksRepository<TaskModel>>().getDatabase();
 
   Box<CategoryModel> getDataBase() => _categoryRepository.getDatabase();
 
