@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:todo/services/route_service.gr.dart';
+import 'package:todo/services/route_service/route_service.gr.dart';
 
 @AutoRouterConfig()
 class RouteService extends $RouteService {

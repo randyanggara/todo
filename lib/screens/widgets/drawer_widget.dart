@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:todo/screens/task_list/controller/drawer_items.dart';
-import 'package:todo/services/route_service.gr.dart';
+import 'package:todo/services/route_service/route_service.gr.dart';
 
 class CustomDrawerWidget extends StatelessWidget {
   const CustomDrawerWidget({super.key});

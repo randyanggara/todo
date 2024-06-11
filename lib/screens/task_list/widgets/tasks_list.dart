@@ -11,7 +11,7 @@ import 'package:todo/screens/task_list/widgets/task_body/connectors/connector_no
 import 'package:todo/screens/task_list/widgets/task_body/icons/icon_not_done_widget.dart';
 import 'package:todo/screens/task_list/widgets/task_body/body/task_card_widget.dart';
 import 'package:todo/screens/task_list/widgets/task_body/icons/icon_done_widget.dart';
-import 'package:todo/services/route_service.gr.dart';
+import 'package:todo/services/route_service/route_service.gr.dart';
 
 class TaskList extends StatelessWidget {
   final TaskListController taskListController;
