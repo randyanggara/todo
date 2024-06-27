@@ -9,13 +9,13 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setSystemUIOverlayStyle(
     const SystemUiOverlayStyle(
-      statusBarColor: Colors.transparent,
+      statusBarColor: Colors.black,
 
       /// for android
-      statusBarIconBrightness: Brightness.dark,
+      statusBarIconBrightness: Brightness.light,
 
       /// for ios
-      statusBarBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
     ),
   );
   await LocalStorageInitializer.registerAdapters();
