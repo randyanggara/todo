@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:todo/services/common/default_category_provider.dart';
 import 'package:todo/data/database/local_storage_initializer.dart';
 import 'package:todo/services/locator_service.dart';
@@ -6,8 +7,20 @@ import 'package:todo/services/route_service/route_service.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+
+      /// for android
+      statusBarIconBrightness: Brightness.dark,
+
+      /// for ios
+      statusBarBrightness: Brightness.dark,
+    ),
+  );
   await LocalStorageInitializer.registerAdapters();
   await LocalStorageInitializer.openAllBoxes();
+
   initDependencies();
 
   await DefaultCategoryProvider.fillDefaultCategory();

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ScheduleAppBarWidget extends StatelessWidget {
-  const ScheduleAppBarWidget({super.key});
+class ScheduleTopWidget extends StatelessWidget {
+  const ScheduleTopWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,11 +20,7 @@ class ScheduleAppBarWidget extends StatelessWidget {
             color: Colors.white,
           ),
         ),
-        IconButton(
-          icon: const Icon(Icons.menu),
-          color: Colors.transparent,
-          onPressed: () {},
-        ),
+        const SizedBox(),
       ],
     );
   }
